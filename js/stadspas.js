@@ -19,6 +19,7 @@ const verify = () => {
                 $(".btn-success").addClass("verified");
                 $(".btn-success").html("Bevestigd");
                 $(".btn-success").attr("disabled", "disabled");
+                $("header").addClass("verified");
             } else {
                 $(".btn-success").addClass("btn-warning");
                 $(".btn-success").removeClass("btn-success");

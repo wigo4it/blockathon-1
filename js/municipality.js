@@ -21,6 +21,7 @@ const attest = () => {
                 $(".btn-success").html("Uitgegeven");
                 $(".btn-success").attr("disabled", "disabled");
                 $(".btn-success").focus();
+                $("header").addClass("verified");
             }
         }).catch((error) => {
             console.error(error);

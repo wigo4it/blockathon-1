@@ -18,6 +18,10 @@ header {
     letter-spacing: 0.1rem;
 }
 
+header.verified {
+    background: #1c8f4f;
+}
+
 h1, h2, h3 {
     font-family: 'Nunito', sans-serif;
     color: darkslategray;
