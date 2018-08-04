@@ -2,7 +2,7 @@
 Result of a 6 hour mini hackathon hosted by WIGO4IT (Pizza's Included) with basically no knowledge about U-PORT.
 
 # Getting Started
-execute npm install
+Install the uport app from the appstore on your mobile phone.
 
 # Build and Test
 

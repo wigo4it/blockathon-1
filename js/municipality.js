@@ -14,7 +14,8 @@ const attest = () => {
     console.log(connect);
     connect.attestCredentials({
             sub: globalState.uportId,
-            claim: { "Stadspas": PROPERTY_VALUE }
+            claim: { "Stadspas": PROPERTY_VALUE },
+            exp: new Date().getTime() + 30 * 24 * 60 * 60 * 1000 * 12,  // Expires in one year
         }).then((retVal) => {
             if (retVal === "ok") {
                 $(".btn-success").addClass("attested");
