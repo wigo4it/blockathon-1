@@ -13,3 +13,7 @@ Then open the stadspas.html  in your web-browser from the file system.
 Connect, login but this time verify that the person actually has a stadspas.
 
 You can install U-PORT from the login screen for either Android or IPhone.
+
+# Screenshot dAPP
+
+![Image of dAPP](./doc/screenshot1.png)
