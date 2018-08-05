@@ -9,6 +9,24 @@ const connect = new Connect('Stadspas', {
     signer: SimpleSigner('a8566caad8918e3513b191f6e1298929a9c95b269c06e6e592c9eb53ef850c5b')
 })
 
+// uPort connect
+const uportConnect = function () {
+    connect.requestCredentials({
+            /*requested: ["name", "phone", "country"],*/
+            notifications: true // We want this if we want to recieve credentials
+        }).then((credentials) => {
+            console.log("Credentials:", credentials);
+
+            updateCredentials(credentials);
+            $("[data-toggle='popover']").popover("dispose");
+            gotoStep2();
+            renderGlobalState();
+        },
+        (err) => {
+            console.log("Error:", err);
+        });
+};
+
 const verify = () => {
     connect.requestCredentials({
             verified: ["Stadspas"]

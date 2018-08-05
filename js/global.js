@@ -63,24 +63,6 @@ const abi = [
 const StatusContract = web3.eth.contract(abi);
 const statusInstance = StatusContract.at("0x70A804cCE17149deB6030039798701a38667ca3B");
 
-// uPort connect
-const uportConnect = function () {
-    connect.requestCredentials({
-            requested: ["name", "phone", "country"],
-            notifications: true // We want this if we want to recieve credentials
-        }).then((credentials) => {
-            console.log("Credentials:", credentials);
-
-            updateCredentials(credentials);
-            $("[data-toggle='popover']").popover("dispose");
-            gotoStep2();
-            renderGlobalState();
-        },
-        (err) => {
-            console.log("Error:", err);
-        });
-};
-
 // Send ether
 const sendEther = () => {
     const value = parseFloat(globalState.sendToVal) * 1.0e18;

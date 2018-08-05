@@ -9,6 +9,24 @@ var connect = new Connect("WIGO4IT IDENTITY",
         signer: SimpleSigner("a0e388225b15ea1fbb0a86547971abc7556049b6d22dc073b7744403e7058e39")
     });
 
+// uPort connect
+const uportConnect = function () {
+    connect.requestCredentials({
+            requested: ["name", "phone", "country"],
+            notifications: true // We want this if we want to recieve credentials
+        }).then((credentials) => {
+            console.log("Credentials:", credentials);
+
+            updateCredentials(credentials);
+            $("[data-toggle='popover']").popover("dispose");
+            gotoStep2();
+            renderGlobalState();
+        },
+        (err) => {
+            console.log("Error:", err);
+        });
+};
+
 const attest = () => {
     const PROPERTY_VALUE = "yes";
     console.log(connect);
